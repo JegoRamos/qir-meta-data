@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cameraFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/round_camera_enhance_white_48dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraFab"
+        app:layout_constraintEnd_toStartOf="@+id/cameraFab"
+        app:layout_constraintTop_toTopOf="@+id/cameraFab"
+        app:srcCompat="@drawable/round_perm_device_information_white_48dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="8dp"
+        app:contentPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="24dp"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/titleTxtview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/ubuntu"
+                android:text="IMAGE PREVIEW"
+                android:textAlignment="center"
+                android:textColor="#FF5722"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <ImageView
+                android:id="@+id/galleryBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:cropToPadding="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:maxWidth="200dp"
+                android:maxHeight="200dp"
+                android:scaleType="fitCenter"
+                android:textAlignment="center"
+                app:srcCompat="@drawable/gallery_icon" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:paddingBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:contentPadding="8dp"
+        app:contentPaddingBottom="16dp"
+        app:contentPaddingTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/cameraFab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/metaDataTxtview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu"
+                android:text="META-DATA"
+                android:textAlignment="center"
+                android:textColor="#FF5722"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadeScrollbars="true"
+                android:scrollIndicators="end|right"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/inspectorLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="INSPECTOR"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/inspectorTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="No data"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        tools:text="EMP-JEG-RAMOS" />
+
+                    <TextView
+                        android:id="@+id/imeiLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="IMEI"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/imeiTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="No data"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        tools:text="9001239990345" />
+
+                    <TextView
+                        android:id="@+id/batchIdLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="BATCH ID"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/batchIdTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="No data"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        tools:text="BTC-SOMETHING-ID" />
+
+                    <TextView
+                        android:id="@+id/timestampLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="TIMESTAMP"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/timestampTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="No data"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        tools:text="JULY 4, 1997" />
+
+                    <TextView
+                        android:id="@+id/defectDetailsLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="DEFECT DETAILS"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/defectDetailsTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="No data"
+                        android:textAlignment="center"
+                        android:textColor="#455A64"
+                        tools:text="Some scratch boi" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
