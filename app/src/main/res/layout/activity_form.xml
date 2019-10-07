@@ -12,11 +12,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:text="IMAGE DETAILS"
+        android:fontFamily="@font/ubuntu"
+        android:text="META-DATA"
         android:textAlignment="center"
         android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,33 +29,140 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:scrollIndicators="bottom"
+        android:scrollbarSize="2dp"
+        android:scrollbarStyle="insideInset"
         app:layout_constraintBottom_toTopOf="@+id/scanBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/divider5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inspectorLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:hint="INSPECTOR"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
+                    android:id="@+id/inspectorEditTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="hint" />
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/ubuntu"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    tools:text="EMP-SOMETHING IS MISSING" />
+
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/imeiLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:hint="IMEI"
+                app:layout_constraintEnd_toEndOf="@+id/inspectorLayout"
+                app:layout_constraintStart_toStartOf="@+id/inspectorLayout"
+                app:layout_constraintTop_toBottomOf="@+id/inspectorLayout">
+
+                <EditText
+                    android:id="@+id/imeiEditTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/ubuntu"
+                    android:inputType="number"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    tools:text="9000000000" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/batchIdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="BATCH ID"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imeiLayout">
+
+                <EditText
+                    android:id="@+id/batchIdEditTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/ubuntu"
+                    android:inputType="text"
+                    android:longClickable="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    tools:text="BTC-SOMETHING" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/defectDetailsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="DEFECT DETAILS"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/batchIdLayout">
+
+                <EditText
+                    android:id="@+id/defectDetailsEditTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/ubuntu"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:maxLength="255"
+                    android:maxLines="8"
+                    android:minLines="3"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    tools:text="Scratch on your face!" />
+            </com.google.android.material.textfield.TextInputLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
@@ -65,12 +175,31 @@
         android:layout_marginBottom="16dp"
         android:adjustViewBounds="true"
         android:cropToPadding="true"
-        android:maxWidth="100dp"
-        android:maxHeight="100dp"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/barcode" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
